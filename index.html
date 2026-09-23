@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple five-dice roller for your next game of Yahtzee.">
+  <title>Web Dice Roller</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#roller">Skip to dice roller</a>
+  <div class="container">
+    <header class="masthead">
+      <a class="brand" href="#roller" aria-label="Web Dice Roller">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="4" y="4" width="24" height="24" rx="6" stroke="currentColor" stroke-width="2"/>
+          <circle cx="10" cy="10" r="2" fill="currentColor"/>
+          <circle cx="16" cy="16" r="2" fill="currentColor"/>
+          <circle cx="22" cy="22" r="2" fill="currentColor"/>
+        </svg>
+        <span>Game night essentials</span>
+      </a>
+      <button id="theme-button" class="theme-button" type="button" aria-pressed="false">Dark mode</button>
+    </header>
+
+    <main id="roller">
+      <header class="intro">
+        <p class="eyebrow">YAHTZEE DICE COMPANION</p>
+        <h1>Web Dice Roller</h1>
+        <p>Five dice. A fresh roll whenever you need it.</p>
+      </header>
+
+      <section class="rolling-table" aria-labelledby="results-heading">
+        <div class="table-heading">
+          <h2 id="results-heading">Your dice</h2>
+          <span class="note">Results are read-only</span>
+        </div>
+        <div class="dice-grid">
+          <div class="die-card">
+            <label for="die-one">First die</label>
+            <div class="face" aria-hidden="true"></div>
+            <input id="die-one" class="die-value" type="text" readonly value="" aria-describedby="range-note">
+          </div>
+          <div class="die-card">
+            <label for="die-two">Second die</label>
+            <div class="face" aria-hidden="true"></div>
+            <input id="die-two" class="die-value" type="text" readonly value="" aria-describedby="range-note">
+          </div>
+          <div class="die-card">
+            <label for="die-three">Third die</label>
+            <div class="face" aria-hidden="true"></div>
+            <input id="die-three" class="die-value" type="text" readonly value="" aria-describedby="range-note">
+          </div>
+          <div class="die-card">
+            <label for="die-four">Fourth die</label>
+            <div class="face" aria-hidden="true"></div>
+            <input id="die-four" class="die-value" type="text" readonly value="" aria-describedby="range-note">
+          </div>
+          <div class="die-card">
+            <label for="die-five">Fifth die</label>
+            <div class="face" aria-hidden="true"></div>
+            <input id="die-five" class="die-value" type="text" readonly value="" aria-describedby="range-note">
+          </div>
+        </div>
+        <div class="roll-controls">
+          <div class="action">
+            <button id="roll-button" class="roll-button" type="button" autofocus>Roll dice <span aria-hidden="true">↻</span></button>
+            <p class="keyboard-hint">Or press <kbd>Enter</kbd> while focused</p>
+          </div>
+          <div class="total">
+            <label for="total">Roll total</label>
+            <input id="total" type="text" value="" readonly>
+          </div>
+        </div>
+        <p id="roll-note" class="roll-note">Getting your dice ready.</p>
+        <p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+      </section>
+
+      <section class="instructions" aria-labelledby="instructions-heading">
+        <h2 id="instructions-heading">How to roll</h2>
+        <p id="range-note">This tool rolls five six-sided dice for Yahtzee. Each result is a random number from one to six.</p>
+        <p>Your first roll happens automatically. Click <strong>Roll dice</strong>, or press <strong>Enter</strong> while the button is focused, to roll all five again. Keep score separately; this tool only rolls dice.</p>
+      </section>
+      <noscript><p class="no-script">JavaScript is turned off. Enable JavaScript in your browser to roll the dice.</p></noscript>
+    </main>
+    <footer>Less setup. More game time.</footer>
+  </div>
+</body>
+</html>
